@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporta Diadema</title>
+    <link rel="stylesheet" type="text/css" href="app/static/css/style.css" media="screen" />
+       
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+          <img src="logo.jpg" alt="Logotipo">
+        </div>
+        <div class="page-title">
+          <h1>Reporta Diadema</h1>
+        </div> 
+        <div class="admin-login">
+          <button>Admin</button>
+        </div>
+    </div>
+      
+    <div class="informativo">
+        <p>Se você sofreu algum tipo de assalto, ou tentativa de assalto, 
+            utilize esse espaço para denunciar!</p>
+    </div>
+    
+      <div class="container">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label for="rua">Informe em qual rua o assalto/tentativa de assalto ocorreu:</label>
+            <input type="text" id="rua" name="rua" required>
+          </div>
+          <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <select id="bairro" name="bairro" required>
+              <option disabled selected>Selecione um bairro</option>
+              <option value="CANHEMA">Canhema</option>
+              <option value="CAMPANARIO">Campanário</option>
+              <option value="CASA GRANDE">Casa Grande</option>
+              <option value="CENTRO">Centro</option>
+              <option value="CONCEIÇÃO">Conceição</option>
+              <option value="ELDORADO">Eldorado</option>
+              <option value="INAMAR">Inamar</option>
+              <option value="PIRAPORINHA">Piraporinha</option>
+              <option value="TABOÃO">Taboão</option>
+              <option value="SERRARIA">Serraria</option>
+              <option value="VILA NOGUEIRA">Vila Nogueira</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="horario">Horário:</label>
+            <select id="bairro" name="bairro" required>
+                <option disabled selected>Selecione um horário</option>
+                <option value="bairro1">Madrugada</option>
+                <option value="bairro2">Manhã</option>
+                <option value="bairro3">Tarde</option>
+                <option value="bairro3">Noite</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="ocorrido">Descreva o ocorrido (informe pontos de referência e o que mais achar necessário):</label>
+            <textarea id="ocorrido" name="ocorrido" rows="4" required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </body>
+    </html>
