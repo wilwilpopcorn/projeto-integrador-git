@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reporta Diadema</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/PaginaInicial.css') }}">
+
+  <script>
+    function funcao1()
+    {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
+      no botão enviar apenas se todos os campos tiverem sido preenchidos*/
+    alert("Agradecemos pela sua contribuição!");
+    }
+    </script>
+
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="logo.jpg" alt="Logotipo"></div>
+    <div class="page-title"><h1>Reporta Diadema</h1></div>
+    <button class="admin-button">
+      <a href="login.html">Admin</a></button>
+  </header>
+  
+  <div class="message-box">
+    <p>Se você foi vítima de algum tipo de crime utilize esse espaço para denunciar!</p>
+  </div>
+
+  <div class="form-container">
+    <form method="post">
+      <input type="text" placeholder="Seu nome" name="nome">
+      <div class="form-row">
+        <select name="idade">
+          <option value="">Idade</option>
+          <option value="idade1">Até 18</option>
+          <option value="Até 18">Até 18</option>
+          <option value="19 a 27">19 a 27</option>
+          <option value="28 a 35">28 a 35</option>
+          <option value="36 a 44">36 a 44</option>
+          <option value="45 a 60">45 a 60</option>
+          <option value="+60">+60</option>
+        </select>
+        <select name="escolaridade">
+          <option value="">Escolaridade</option>
+          <option value="Ensino Fundamental incompleto">Ensino Fundamental incompleto</option>
+          <option value="Ensino Fundamental completo">Ensino Fundamental completo</option>
+          <option value="Ensino Médio incompleto">Ensino Médio incompleto</option>
+          <option value="Ensino Médio completo">Ensino Médio completo</option>
+          <option value="Ensino Superior incompleto">Ensino Superior incompleto</option>
+        </select>
+      </div>
+      <input type="text" name="rua" placeholder="Endereço onde o crime ocorreu">
+      <div class="form-row">
+        <select name="bairro">
+          <option value="">Bairro do crime</option>
+          <option value="Canhema">Canhema</option>
+          <option value="Campanário">Campanário</option>
+          <option value="Casa Grande">Casa Grande</option>
+          <option value="Centro">Centro</option>
+          <option value="Conceição">Conceição</option>
+          <option value="Eldorado">Eldorado</option>
+          <option value="Inamar">Inamar</option>
+          <option value="Piraporinha">Piraporinha</option>
+          <option value="Taboão">Taboão</option>
+          <option value="Serraria">Serraria</option>
+          <option value="Vila Nogueira">Vila Nogueira</option>
+        </select>
+        <select name="periodo">
+          <option value="">Selecione o horário</option>
+          <option value="Madrugada">Madrugada</option>
+          <option value="Manhã">Manhã</option>
+          <option value="Tarde">Tarde</option>
+          <option value="Noite">Noite</option>
+        </select>
+      </div>
+      <textarea name="obs" placeholder="Descreva o ocorrido (informe pontos de referência e o que mais achar necessário)"></textarea>
+      <button type="submit" >Enviar</button>
+    </form>
+  </div>
+
+  <footer> Denuncie todo e qualquer tipo de crime! Contatos úteis: ... </footer>
+</body>
+</html>
