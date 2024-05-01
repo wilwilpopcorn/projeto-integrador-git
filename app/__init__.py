@@ -1,4 +1,6 @@
-from flask import Flask, request, render_template_string,render_template
+
+from flask import Flask, request, render_template_string,render_templat
+
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -21,7 +23,7 @@ def reportincident():
         idade = request.form.get('idade')
         obs = request.form.get('obs')
         escolaridade = request.form.get('escolaridade')
-
+        
         mycursor = db.cursor()
         sql = "INSERT INTO assaltos (nome, rua, bairro, periodo, idade, obs, escolaridade) VALUES (%s, %s, %s, %s, %s, %s, %s)"
         val = (nome, rua, bairro, periodo, idade, obs, escolaridade)
