@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/consulta.css') }}">
+
+</head>
+<body> 
+  <header>
+    <div class="logo"><img src="logo.jpg" alt="Logotipo"></div>
+    <div class="page-title"><h1>Consulta</h1></div>
+    <button class="paginicial-button" >
+      <a href="Paginainicial">Voltar à página inicial</a></button>
+  </header>
+
+  <div class="container">
+  <h2>  
+
+<table border="1">
+  <tr>
+    <th>Seu Nome</th>
+    <th>Idade</th>
+    <th>Escolaridade</th>
+    <th>Endereço onde o crime ocorreu</th>
+    <th>Bairro do crime</th>
+
+  </tr>
+  {% for dado in dados %}
+  <tr>
+    <td>{{ dado[1] }}</td>
+    <td>{{ dado[4] }}</td>
+    <td>{{ dado[7] }}</td>
+    <td>{{ dado[2] }}</td>
+    <td>{{ dado[3] }}</td>
+  </tr>
+  {% endfor %}
+</h2>
+
+</table>
+</div>
+
+
+
+
+</body>>
+</html>

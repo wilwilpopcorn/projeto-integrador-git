@@ -1,4 +1,6 @@
-from flask import Flask, request, render_template_string
+
+from flask import Flask, request, render_template_string,render_templat
+
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -10,6 +12,7 @@ db = mysql.connector.connect(
 
 app = Flask(__name__)
 
+@app.route('/Paginainicial', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def reportincident():
     if request.method == 'POST':
@@ -21,10 +24,10 @@ def reportincident():
         obs = request.form.get('obs')
         escolaridade = request.form.get('escolaridade')
 
-        # Aqui você pode processar os dados do formulário como quiser.
-        # Por exemplo, você pode armazená-los em um banco de dados.
-        #crud simples para inserção dos dados em bd mysql
-        
+
+        UF = ( 'SP' )
+        link = f'https://viacep.com.br/ws/{rua}/{bairro}/{UF}/json/'
+
 
         mycursor = db.cursor()
         sql = "INSERT INTO assaltos (nome, rua, bairro, periodo, idade, obs, escolaridade) VALUES (%s, %s, %s, %s, %s, %s, %s)"
@@ -33,15 +36,20 @@ def reportincident():
         db.commit()
         print(mycursor.rowcount, "record inserted.")
 
-
-    # Renderiza o formulário. Em uma aplicação real, você provavelmente
-    # quereria usar rendertemplate() e manter seu HTML em um arquivo separado.
     return render_template_string(open("app\static\HTML\PaginaInicial.html").read())
 
 
 @app.route('/login', methods=['GET','POST'])
 def login():
     return render_template_string(open("app\static\HTML\login.html").read())
+
+@app.route('/consulta', methods=['GET','POST'])
+def consulta():
+    mycursor = db.cursor()
+    mycursor.execute("SELECT * FROM assaltos")
+    dados = mycursor.fetchall()
+    html_string = open("app\static\HTML\consulta.html").read()
+    return render_template_string(html_string, dados=dados)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, debug=True)
