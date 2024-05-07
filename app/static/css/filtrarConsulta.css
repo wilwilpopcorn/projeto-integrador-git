@@ -1,7 +1,8 @@
+
 *{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-  
+
   body {
     margin: 0;
     background-color:#fff;
@@ -30,17 +31,12 @@
     margin: 5px;
   }
 
-  h3{
-    text-align: center;
+  .filtro{
+    font-weight: bold;
+    font-size: 18px;
   }
 
-  .titulo{
-    text-align: center;
-    width: 1400px;
-    margin-left: 50px;
-  }
-
-  .PgInicialBtn {
+  .PgInicialBtn{
     background-color: #555;
     color: #fff;
     border: none;
@@ -49,57 +45,50 @@
     width: 130px;
   }
 
-  .message-box {
-    padding: 0px 20px 0px 20px;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+  input{
+    height: 22px;
   }
-  
-  .message-box textarea {
-    width: 100%;
-    height: 100px;
-    box-sizing: border-box;
-    padding: 10px;
+
+  button[type="submit"] {
+    background-color: #555;
+    color: #fff;
     border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+    cursor: pointer;
 
-  button{
+  } 
+
+  .VoltarBtn {
     background-color: #555;
     color: #fff;
     border: none;
+    padding: 8px 16px;
     border-radius: 5px;
-    cursor: pointer;
+    width: 100px;
   }
 
-  /* .paginicial-button{
+  .container {
+    margin: 15px;
+  }
+  
+  .paginicial-button{
     background-color: #333;
     color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-  } */
+  }
 
   a { 
     color: inherit;
     text-decoration: none;
   } 
 
-  .filtro{
-    display: block;
-    align-content: center;
-    margin: 0px 20px 0px 20px;
-  }
-
-  .fa{
+  .fa, .fa-solid{
     padding: 5px;
   }
 
-  .fas{
+  .fas, .fa-solid{
     padding-right: 4px ;
   }
 
@@ -107,6 +96,7 @@
     text-align: center;
     display: flex;
     margin: 15px;
+    padding: 15px;
   }
 
   table {
@@ -126,26 +116,44 @@
 
   tr, td{
     border: 2px solid black;
+    width: 800px;
   }
   
-  .endereco{
-    width: 700px;
+  .filtro{
+    display: block;
   }
 
-  .bairro{
-    width: 300px;
+  select{
+    display: flex;
+    width: 120px;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .filtroSelect{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
   }
 
   button:hover {
     background-color: #000000;
   }
 
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    top:auto
-  } 
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+  }
+
+  .form-row>*{
+    margin: 0 5px;
+  }
+
+  .ConsultaEndereco, .ConsultaBairro, .ConsultaCrime {
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 18px;
+}

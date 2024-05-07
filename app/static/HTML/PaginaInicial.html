@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporta Diadema</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/PaginaInicial.css') }}">
+  <link rel="stylesheet" href="../css/PaginaInicial.css">
 
   <script>
-    function funcao1()
-    {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
+    function funcao1() {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
       no botão enviar apenas se todos os campos tiverem sido preenchidos*/
-    alert("Agradecemos pela sua contribuição!");
+      alert("Agradecemos pela sua contribuição!");
     }
-    </script>
-
+  </script>
 </head>
-<body>
-  <header>
-    <div class="logo"><img src="logo.jpg" alt="Logotipo"></div>
-    <div class="page-title"><h1>Reporta Diadema</h1></div>
 
+<body>
+  <!-- <header>
+    <div class="logo">
+      <img src="../logo.jpg" alt="Logotipo">
+    </div>
+    <div class="page-title">
+      <h1>Reporta Diadema</h1>
+    </div>
     <button class="consulta">
-      <a href="consulta">Consulta</a></button>
+      <a href="consulta.html">Consulta</a>
+    </button>
+  </header> -->
+
+  <header>
+    <div class="logo">
+      <img src="../logo.jpg" alt="Logotipo">
+    </div>
+    <div class="page-title"><h1>Reporta Diadema</h1>
+    </div>
+    <button class="consulta">
+      <a href="consulta.html">Consulta</a>
+    </button>
+    <button class="quemSomos">
+      <a href="quemSomos.html">Quem somos</a>
+    </button>
   </header>
-  
+
   <div class="message-box">
-    <p>Se você foi vítima de algum tipo de crime utilize esse espaço para denunciar!</p>
+    <h3>Se você foi vítima de algum tipo de crime utilize esse espaço para denunciar!</h3>
   </div>
 
   <div class="form-container">
     <form method="post">
-      <input type="text" placeholder="Seu nome" name="nome">
+      <!-- <input type="text" placeholder="Seu nome" name="nome">
       <div class="form-row">
         <select name="idade">
           <option value="">Idade</option>
@@ -50,11 +68,11 @@
           <option value="Ensino Médio completo">Ensino Médio completo</option>
           <option value="Ensino Superior incompleto">Ensino Superior incompleto</option>
         </select>
-      </div>
-      <input type="text" name="rua" placeholder="Endereço onde o crime ocorreu">
+      </div> -->
+      <input maxlength="50" type="text" name="rua" placeholder="Endereço do crime">
       <div class="form-row">
         <select name="bairro">
-          <option value="">Bairro do crime</option>
+          <option value="">Bairro</option>
           <option value="Canhema">Canhema</option>
           <option value="Campanário">Campanário</option>
           <option value="Casa Grande">Casa Grande</option>
@@ -68,18 +86,18 @@
           <option value="Vila Nogueira">Vila Nogueira</option>
         </select>
         <select name="periodo">
-          <option value="">Selecione o horário</option>
+          <option value="">Horário</option>
           <option value="Madrugada">Madrugada</option>
           <option value="Manhã">Manhã</option>
           <option value="Tarde">Tarde</option>
           <option value="Noite">Noite</option>
         </select>
       </div>
-      <textarea name="obs" placeholder="Descreva o ocorrido (informe pontos de referência e o que mais achar necessário)"></textarea>
-      <button type="submit" >Enviar</button>
+      <textarea name="obs"
+        placeholder="Descreva o ocorrido (informe pontos de referência e o que mais achar necessário)"></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </div>
-
-  <footer> Denuncie todo e qualquer tipo de crime! Contatos úteis: ... </footer>
+  <footer>Denuncie todo e qualquer tipo de crime as autoridades responsáveis!</footer>
 </body>
 </html>
