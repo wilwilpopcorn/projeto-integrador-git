@@ -20,6 +20,8 @@ def reportincident():
         print(f'Horário: {horario}')
         print(f'Ocorrido: {ocorrido}')
 
+        link = f'https://viacep.com.br/ws/{rua}/{bairro}json/'
+                                
     # Renderiza o formulário. Em uma aplicação real, você provavelmente
     # quereria usar rendertemplate() e manter seu HTML em um arquivo separado.
     return render_template_string(open("Inicio.html").read())
