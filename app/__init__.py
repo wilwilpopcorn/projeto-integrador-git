@@ -24,10 +24,8 @@ def reportincident():
         obs = request.form.get('obs')
         escolaridade = request.form.get('escolaridade')
 
-
         UF = ( 'SP' )
         link = f'https://viacep.com.br/ws/{rua}/{bairro}/{UF}/json/'
-
 
         mycursor = db.cursor()
         sql = "INSERT INTO assaltos (nome, rua, bairro, periodo, idade, obs, escolaridade) VALUES (%s, %s, %s, %s, %s, %s, %s)"
