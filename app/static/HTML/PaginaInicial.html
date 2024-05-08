@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporta Diadema</title>
-  <link rel="stylesheet" href="../css/PaginaInicial.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/PaginaInicial.css') }}">
 
   <script>
     function funcao1() {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
@@ -31,15 +31,15 @@
   <header>
 
     <div class="logo">
-      <img src="../logo.jpg" alt="Logotipo">
+      <img src="{{ url_for('static', filename='logo.jpg') }}"  alt="Logotipo">
     </div>
     <div class="page-title"><h1>Reporta Diadema</h1>
     </div>
     <button class="consulta">
-      <a href="consulta.html">Consulta</a>
+      <a href="consulta">Consulta</a>
     </button>
     <button class="quemSomos">
-      <a href="quemSomos.html">Quem somos</a>
+      <a href="quemSomos">Quem somos</a>
     </button>
 
   </header>
