@@ -1,3 +1,4 @@
+
 *{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -11,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     background-color: #2d6b219c;
     color: #333;
     padding: 0px 30px 0px 30px;
