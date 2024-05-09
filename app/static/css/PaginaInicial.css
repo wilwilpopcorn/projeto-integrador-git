@@ -2,6 +2,14 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.alert {
+  background-color: red;
+  color: #333; /* Cor do texto */
+}
+.alert-success {
+  background-color: green;
+  color: #ffffff; /* Cor do texto */
+}
   body {
     margin: 0;
   }
@@ -98,6 +106,7 @@
   .form-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
   }
 
@@ -113,7 +122,14 @@
     border-radius: 5px;
     cursor: pointer;  
   }
-
+  button[type="verificar"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;  
+  }
   button:hover {
     background-color: #000000;
   }

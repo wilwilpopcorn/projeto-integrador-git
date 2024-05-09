@@ -27,7 +27,17 @@
       <a href="consulta.html">Consulta</a>
     </button>
   </header> -->
-
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class=flashes>
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
   <header>
 
     <div class="logo">
@@ -71,32 +81,34 @@
           <option value="Ensino Superior incompleto">Ensino Superior incompleto</option>
         </select>
       </div> -->
-      <input maxlength="50" type="text" name="rua" placeholder="Endereço do crime">
+      <div style="display: flex; align-items: center;">
+        <input maxlength="50" type="text" name="rua" placeholder="Endereço do crime" value="{{rua}}">
+        
+      </div>
       <div class="form-row">
         <select name="bairro">
           <option value="">Bairro</option>
-          <option value="Canhema">Canhema</option>
-          <option value="Campanário">Campanário</option>
-          <option value="Casa Grande">Casa Grande</option>
-          <option value="Centro">Centro</option>
-          <option value="Conceição">Conceição</option>
-          <option value="Eldorado">Eldorado</option>
-          <option value="Inamar">Inamar</option>
-          <option value="Piraporinha">Piraporinha</option>
-          <option value="Taboão">Taboão</option>
-          <option value="Serraria">Serraria</option>
-          <option value="Vila Nogueira">Vila Nogueira</option>
-        </select>
-        <select name="periodo">
-          <option value="">Horário</option>
-          <option value="Madrugada">Madrugada</option>
-          <option value="Manhã">Manhã</option>
-          <option value="Tarde">Tarde</option>
-          <option value="Noite">Noite</option>
-        </select>
+          <option value="Canhema" {% if bairro == "Canhema" %}selected{% endif %}>Canhema</option>
+          <option value="Campanário" {% if bairro == "Campanário" %}selected{% endif %}>Campanário</option>
+          <option value="Casa Grande" {% if bairro == "Casa Grande" %}selected{% endif %}>Casa Grande</option>
+          <option value="Centro" {% if bairro == "Centro" %}selected{% endif %}>Centro</option>
+          <option value="Conceição" {% if bairro == "Conceição" %}selected{% endif %}>Conceição</option>
+          <option value="Inamar" {% if bairro == "Inamar" %}selected{% endif %}>Inamar</option>
+          <option value="Piraporinha" {% if bairro == "Piraporinha" %}selected{% endif %}>Piraporinha</option>
+          <option value="Taboão" {% if bairro == "Taboão" %}selected{% endif %}>Taboão</option>
+          <option value="Serraria" {% if bairro == "Serraria" %}selected{% endif %}>Serraria</option>
+          <option value="Vila Nogueira" {% if bairro == "Vila Nogueira" %}selected{% endif %}>Vila Nogueira</option>
+      </select>
+      <select name="periodo">
+        <option value="">Horário</option>
+        <option value="Madrugada" {% if periodo == "Madrugada" %}selected{% endif %}>Madrugada</option>
+        <option value="Manhã" {% if periodo == "Manhã" %}selected{% endif %}>Manhã</option>
+        <option value="Tarde" {% if periodo == "Tarde" %}selected{% endif %}>Tarde</option>
+        <option value="Noite" {% if periodo == "Noite" %}selected{% endif %}>Noite</option>
+    </select>
       </div>
       <textarea name="obs"
-        placeholder="Descreva o ocorrido (informe pontos de referência e o que mais achar necessário)"></textarea>
+        placeholder="Descreva o ocorrido (informe pontos de referência e o que mais achar necessário)">{{obs}}</textarea>
       <button type="submit">Enviar</button>
     </form>
   </div>
