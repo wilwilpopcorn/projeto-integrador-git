@@ -6,28 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta</title>
 
-  <link rel="stylesheet" href="../css/consulta.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/consulta.css') }}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="../logo.jpg" alt="Logotipo">
+      <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logotipo">
     </div>
     <div class="page-title"><h1>Reporta Diadema</h1>
     </div>
     <button class="PgInicialBtn">
-      <a href="PaginaInicial.html"><i class="fas fa-undo"></i>Página inicial</a>
+      <a href="Paginainicial"><i class="fas fa-undo"></i>Página inicial</a>
     </button>
   </header> 
+ <!-- Adicionar o formulário aqui -->
+ <form method="GET" action="/consulta">
+  <select name="bairro">
+      <option value="">Selecione o bairro</option>
+      <option value="Canhema">Canhema</option>
+      <option value="Campanário">Campanário</option>
+      <option value="Casa Grande">Casa Grande</option>
+      <option value="Centro">Centro</option>
+      <option value="Conceição">Conceição</option>
+      <option value="Eldorado">Eldorado</option>
+      <option value="Inamar">Inamar</option>
+      <option value="Piraporinha">Piraporinha</option>
+      <option value="Taboão">Taboão</option>
+      <option value="Serraria">Serraria</option>
+      <option value="Vila Nogueira">Vila Nogueira</option>
+  </select>
+  <select name="periodo">
+      <option value="">Selecione o período</option>
+      <option value="Madrugada">Madrugada</option>
+      <option value="Manhã">Manhã</option>
+      <option value="Tarde">Tarde</option>
+      <option value="Noite">Noite</option>
+  </select>
+  <input type="submit" value="Filtrar">
+</form>
 
   <div class="message-box">
     <div class="titulo">
       <h2>Casos registrados</h2> 
     </div> 
     <div class="filtro">
-      <button><a href="filtrarConsulta.html">
+      <button><a href="filtrarConsulta">
         <i class="fa fa-filter" aria-hidden="true"></i>
         <div>Filtrar</div></a>
       </button>
@@ -58,21 +83,19 @@
     <!-- <h3> -->
       <table>
         <tr>
+          <th class = "qtd">Qtd de Denuncias</th>
           <th class="endereco">Endereço</th>
           <th class="bairro">Bairro</th>
           <th class="horario">Horário</th>
         </tr>
         <!-- {% for dado in dados %} -->
         <tr>
+          <td>{{dado[3]}}</td>
+          <td>{{ dado[0] }}</td>
+          <td>{{ dado[1] }}</td>
           <td>{{ dado[2] }}</td>
-          <td>{{ dado[3] }}</td>
-          <td>{{ dado[4] }}</td>
         </tr>
-        <tr>
-          <td>{{ dado[2] }}</td>
-          <td>{{ dado[3] }}</td>
-          <td>{{ dado[4] }}</td>
-        </tr>
+    
         <!-- {% endfor %} -->
     <!-- </h3> -->
     </table>
