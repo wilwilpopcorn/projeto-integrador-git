@@ -5,7 +5,10 @@
 <p>feito isso, abra o GIT bash, vá até o local onde vai estar o repositorio e rode:</p>
 <code>git clone "nome do repositorio"</code>
 
-<h2>Este projeto ja está com a venv configurada para sistemas linux, caso não consiga abrir, crie uma nova venv:</h2>
-<code>python -m venv venv</code>
+<h2>Para conseguir rodar o projeto:</h2>
+<p>É necessario que você tenha baixado o mysql e crie uma base de dados similar ao do projeto.</p>
+<p>Feito isso, é só rodar no terminal:</p>
+<code>pip install -r requirements.txt</code>
 <br/><br/>
-<p>Após isso, é só iniciar a mesma</p>
+<p>E então rodar:</p>
+<code>python backend.py</code>
