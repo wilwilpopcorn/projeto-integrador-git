@@ -5,28 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporta Diadema</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/PaginaInicial.css') }}">
+  <link rel="stylesheet" href="../css/PaginaInicial.css">
 
   <script>
-    function funcao1() {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
-      no botão enviar apenas se todos os campos tiverem sido preenchidos*/
+    function funcao1() {  
       alert("Agradecemos pela sua contribuição!");
     }
   </script>
 </head>
 
 <body>
-  <!-- <header>
-    <div class="logo">
-      <img src="../logo.jpg" alt="Logotipo">
-    </div>
-    <div class="page-title">
-      <h1>Reporta Diadema</h1>
-    </div>
-    <button class="consulta">
-      <a href="consulta.html">Consulta</a>
-    </button>
-  </header> -->
+<!-- 
   {% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <div class=flashes>
@@ -37,7 +26,7 @@
     {% endfor %}
     </div>
   {% endif %}
-{% endwith %}
+{% endwith %} -->
   <header>
 
     <div class="logo">
@@ -46,7 +35,7 @@
     <div class="page-title"><h1>Reporta Diadema</h1>
     </div>
     <button class="consulta">
-      <a href="consulta">Consulta</a>
+      <a href="consulta.html">Consulta</a>
     </button>
     <button class="quemSomos">
       <a href="quemSomos">Quem somos</a>
@@ -60,33 +49,12 @@
 
   <div class="form-container">
     <form method="post">
-      <!-- <input type="text" placeholder="Seu nome" name="nome">
-      <div class="form-row">
-        <select name="idade">
-          <option value="">Idade</option>
-          <option value="idade1">Até 18</option>
-          <option value="Até 18">Até 18</option>
-          <option value="19 a 27">19 a 27</option>
-          <option value="28 a 35">28 a 35</option>
-          <option value="36 a 44">36 a 44</option>
-          <option value="45 a 60">45 a 60</option>
-          <option value="+60">+60</option>
-        </select>
-        <select name="escolaridade">
-          <option value="">Escolaridade</option>
-          <option value="Ensino Fundamental incompleto">Ensino Fundamental incompleto</option>
-          <option value="Ensino Fundamental completo">Ensino Fundamental completo</option>
-          <option value="Ensino Médio incompleto">Ensino Médio incompleto</option>
-          <option value="Ensino Médio completo">Ensino Médio completo</option>
-          <option value="Ensino Superior incompleto">Ensino Superior incompleto</option>
-        </select>
-      </div> -->
       <div style="display: flex; align-items: center;">
-        <input maxlength="50" type="text" name="rua" placeholder="Endereço do crime" value="{{rua}}">
+        <input maxlength="50" type="text" name="rua" placeholder="Endereço do crime" value="{{rua}}" required>
         
       </div>
       <div class="form-row">
-        <select name="bairro">
+        <select name="bairro" required>
           <option value="">Bairro</option>
           <option value="Canhema" {% if bairro == "Canhema" %}selected{% endif %}>Canhema</option>
           <option value="Campanário" {% if bairro == "Campanário" %}selected{% endif %}>Campanário</option>
@@ -99,7 +67,7 @@
           <option value="Serraria" {% if bairro == "Serraria" %}selected{% endif %}>Serraria</option>
           <option value="Vila Nogueira" {% if bairro == "Vila Nogueira" %}selected{% endif %}>Vila Nogueira</option>
       </select>
-      <select name="periodo">
+      <select name="periodo" required>
         <option value="">Horário</option>
         <option value="Madrugada" {% if periodo == "Madrugada" %}selected{% endif %}>Madrugada</option>
         <option value="Manhã" {% if periodo == "Manhã" %}selected{% endif %}>Manhã</option>
