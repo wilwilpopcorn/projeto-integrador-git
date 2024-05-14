@@ -94,9 +94,10 @@ def reportincident():
     with open("static\HTML\PaginaInicial.html", encoding='utf-8') as file:
         template = file.read()
     return render_template_string(template, nome=session.get('nome', ''), rua=session.get('rua', ''), bairro=session.get('bairro', ''), periodo=session.get('periodo', ''), idade=session.get('idade', ''), obs=session.get('obs', ''), escolaridade=session.get('escolaridade', ''))
-@app.route('/login', methods=['GET','POST'])
-def login():
-    return render_template_string(open("static\HTML\login.html", encoding='utf-8').read())
+
+@app.route('/quemSomos', methods=['GET','POST'])
+def quemSomos():
+    return render_template_string(open("static\HTML\quemSomos.html", encoding='utf-8').read())
 
 @app.route('/consulta', methods=['GET','POST'])
 def consulta():
