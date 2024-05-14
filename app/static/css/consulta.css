@@ -51,6 +51,15 @@
     width: 130px;
   }
 
+  .filtrar{
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    width: 100px;
+    cursor: pointer;
+  }
+
   .message-box {
     padding: 0px 20px 0px 20px;
     margin: 0;
