@@ -44,19 +44,13 @@
       <option value="Tarde">Tarde</option>
       <option value="Noite">Noite</option>
   </select>
-  <input type="submit" value="Filtrar">
+  <input type="submit" value="Filtrar" class="filtrar">
 </form>
 
   <div class="message-box">
     <div class="titulo">
       <h2>Casos registrados</h2> 
     </div> 
-    <div class="filtro">
-      <button><a href="filtrarConsulta">
-        <i class="fa fa-filter" aria-hidden="true"></i>
-        <div>Filtrar</div></a>
-      </button>
-    </div>
   </div>
   <!-- <div class="container">
     <div class="filtro">
@@ -102,8 +96,8 @@
   </div>
 </body>
 <footer>
-  <p>Total de casos registrados: ....</p>
-  <p>Última atualização em: dd/mm/aa</p>
+  <p>Total de denuncias feitas no site: {{total_casos}}</p>
+  <p>Última atualização em:{{data_atualizacao}}</p>
 </footer>
 
 </html>

@@ -82,24 +82,25 @@
         </select>
       </div> -->
       <div style="display: flex; align-items: center;">
-        <input maxlength="50" type="text" name="rua" placeholder="Endereço do crime" value="{{rua}}">
+        <input maxlength="50" type="text" name="rua" placeholder="Rua onde ocorreu o crime" value="{{rua}}" required>
         
       </div>
       <div class="form-row">
-        <select name="bairro">
+        <select name="bairro" required>
           <option value="">Bairro</option>
           <option value="Canhema" {% if bairro == "Canhema" %}selected{% endif %}>Canhema</option>
           <option value="Campanário" {% if bairro == "Campanário" %}selected{% endif %}>Campanário</option>
           <option value="Casa Grande" {% if bairro == "Casa Grande" %}selected{% endif %}>Casa Grande</option>
           <option value="Centro" {% if bairro == "Centro" %}selected{% endif %}>Centro</option>
           <option value="Conceição" {% if bairro == "Conceição" %}selected{% endif %}>Conceição</option>
+          <option value="Eldorado" {% if bairro == "Eldorado" %}selected{% endif %}>Eldorado</option>
           <option value="Inamar" {% if bairro == "Inamar" %}selected{% endif %}>Inamar</option>
           <option value="Piraporinha" {% if bairro == "Piraporinha" %}selected{% endif %}>Piraporinha</option>
           <option value="Taboão" {% if bairro == "Taboão" %}selected{% endif %}>Taboão</option>
           <option value="Serraria" {% if bairro == "Serraria" %}selected{% endif %}>Serraria</option>
           <option value="Vila Nogueira" {% if bairro == "Vila Nogueira" %}selected{% endif %}>Vila Nogueira</option>
       </select>
-      <select name="periodo">
+      <select name="periodo" required>
         <option value="">Horário</option>
         <option value="Madrugada" {% if periodo == "Madrugada" %}selected{% endif %}>Madrugada</option>
         <option value="Manhã" {% if periodo == "Manhã" %}selected{% endif %}>Manhã</option>
