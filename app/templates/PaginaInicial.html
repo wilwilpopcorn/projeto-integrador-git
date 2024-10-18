@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporta Diadema</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/PaginaInicial.css') }}">
+  <link rel="stylesheet" href="../static/css/PaginaInicial.css">
 
   <script>
     function funcao1() {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
@@ -16,74 +16,51 @@
 </head>
 
 <body>
-  <!-- <header>
-    <div class="logo">
-      <img src="../logo.jpg" alt="Logotipo">
-    </div>
-    <div class="page-title">
-      <h1>Reporta Diadema</h1>
-    </div>
-    <button class="consulta">
-      <a href="consulta.html">Consulta</a>
-    </button>
-  </header> -->
+  <div class="flashes" style="display: none;">
   {% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    <div class=flashes>
-    {% for category, message in messages %}
-      <div class="alert alert-{{ category }}">
-        {{ message }}
+    {% if messages %}
+      <div class=flashes>
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+            {{ message }}
+          </div>
+          {% endfor %}
       </div>
-    {% endfor %}
-    </div>
-  {% endif %}
-{% endwith %}
+    {% endif %}
+  {% endwith %}
+  </div>
+  
   <header>
-
     <div class="logo">
-      <img src="{{ url_for('static', filename='logo.jpg') }}"  alt="Logotipo">
+      <img src="../static/logo.jpg"  alt="Logotipo">
     </div>
     <div class="page-title"><h1>Reporta Diadema</h1>
     </div>
     <button class="consulta">
-      <a href="consulta">Consulta</a>
+      <a href="consulta.html">Consulta</a>
     </button>
     <button class="quemSomos">
-      <a href="quemSomos">Quem somos</a>
+      <a href="quemSomos.html">Quem somos</a>
     </button>
 
   </header>
 
   <div class="message-box">
-    <h3>Se você foi vítima de algum tipo de crime utilize esse espaço para denunciar!</h3>
+    <h3>Utilize esse espaço para reportar!</h3>
   </div>
 
   <div class="form-container">
     <form method="post">
-      <!-- <input type="text" placeholder="Seu nome" name="nome">
-      <div class="form-row">
-        <select name="idade">
-          <option value="">Idade</option>
-          <option value="idade1">Até 18</option>
-          <option value="Até 18">Até 18</option>
-          <option value="19 a 27">19 a 27</option>
-          <option value="28 a 35">28 a 35</option>
-          <option value="36 a 44">36 a 44</option>
-          <option value="45 a 60">45 a 60</option>
-          <option value="+60">+60</option>
+      <div>
+        <select name="tipoProblema" required>
+          <option value="">Tipo de problema</option>
+          <option value="Roubo" {% if tipoProblema == "Roubo" %}selected{% endif %}>Roubo</option>
+          <option value="Iluminação" {% if tipoProblema == "Iluminação" %}selected{% endif %}>Iluminação</option>
+          <option value="Buraco" {% if tipoProblema == "Buraco" %}selected{% endif %}>Buraco</option>
         </select>
-        <select name="escolaridade">
-          <option value="">Escolaridade</option>
-          <option value="Ensino Fundamental incompleto">Ensino Fundamental incompleto</option>
-          <option value="Ensino Fundamental completo">Ensino Fundamental completo</option>
-          <option value="Ensino Médio incompleto">Ensino Médio incompleto</option>
-          <option value="Ensino Médio completo">Ensino Médio completo</option>
-          <option value="Ensino Superior incompleto">Ensino Superior incompleto</option>
-        </select>
-      </div> -->
+      </div>
       <div style="display: flex; align-items: center;">
         <input maxlength="50" type="text" name="rua" placeholder="Rua onde ocorreu o crime" value="{{rua}}" required>
-        
       </div>
       <div class="form-row">
         <select name="bairro" required>
