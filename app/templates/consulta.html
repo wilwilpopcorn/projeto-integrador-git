@@ -13,7 +13,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="../static/logo.jpg" alt="Logotipo">
+      <img src="../static/logo.png" alt="Logotipo" title="Logotipo Reporta Diadema">
     </div>
     <div class="page-title"><h1>Reporta Diadema</h1>
     </div>
@@ -44,6 +44,20 @@
       <option value="Tarde">Tarde</option>
       <option value="Noite">Noite</option>
   </select>
+  <select name="Tipo de Problema">
+    <option value="">Selecione o tipo de problema</option>
+    <option value="Roubo">Roubo</option>
+    <option value="Vias esburacadas">Vias esburacadas</option>
+    <option value="Iluminação">Iluminação</option>
+</select>
+</select>
+<select name="Data">
+  <option value="">Selecione o mês e o ano</option>
+  <option value="Outubro24">Outubro/2024</option>
+  <option value="Novembro24">Novembro/2024</option>
+  <option value="Dezembro24">Dezembro/2024</option>
+  <option value="Janeiro25">Janeiro/2025</option>
+</select>
   <input type="submit" value="Filtrar" class="filtrar">
 </form>
 
@@ -55,23 +69,56 @@
   <div class="container-table">
       <table>
         <tr>
-          <th class = "qtd">Qtd de Denuncias</th>
+          <th class = "qtd">Denúncias</th>
           <th class="endereco">Endereço</th>
           <th class="bairro">Bairro</th>
           <th class="horario">Horário</th>
+          <th class="tipo de problema">Problema</th>
+          <th class="Data">Data</th>
         </tr>
         <tr>
           <td>{{dado[3]}}</td>
           <td>{{ dado[0] }}</td>
           <td>{{ dado[1] }}</td>
           <td>{{ dado[2] }}</td>
+          <td>{{ dado[4] }}</td>
+          <td>{{ dado[5] }}</td>
         </tr>
     </table>
   </div>
 </body>
 <footer>
-  <p>Total de denuncias feitas no site: {{total_casos}}</p>
+  <p>Total de denúncias feitas no site: {{total_casos}}</p>
   <p>Última atualização em:{{data_atualizacao}}</p>
+
+  <style>
+    body {
+        background-color: #ffffff; /* Fundo padrão */
+        color: #333333; /* Texto padrão */
+    }
+  
+    .alto-contraste {
+        background-color: #000000; /* Fundo escuro */
+        color: #ffffff; /* Texto claro */
+      button, button[type] {
+        background-color: #000000; /* Fundo escuro */
+        color: #ffffff; /* Texto claro */
+        font-weight: bold;
+      }
+      header{
+        color: #ffffff ;/* Texto claro */ 
+        }
+      }
+  </style>
+  
+  <button id="toggle-contrast">Alternar Alto Contraste</button>
+  
+  <script>
+    document.getElementById('toggle-contrast').addEventListener('click', function() {
+  document.body.classList.toggle('alto-contraste');
+    });
+  </script>
+
 </footer>
 
 </html>

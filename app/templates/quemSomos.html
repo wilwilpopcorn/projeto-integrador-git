@@ -12,7 +12,7 @@
 <body>
   <header>
     <div class="logo">
-      <img src="../static/logo.jpg" alt="Logotipo">
+      <img src="../static/logo.png" alt="Logotipo" title="Logotipo Reporta Diadema">
       
     </div>
     <div class="page-title"><h1>Reporta Diadema</h1>
@@ -28,10 +28,10 @@
             <p>Somos um grupo de estudantes da Universidade Virtual do Estado de São Paulo
                (UNIVESP) responsáveis pelo desenvolvimento do Reporta Diadema, 
                que se trata de uma página
-               para auxiliar a comunidade a reportar e ter acesso aos crimes e 
-               localidades em que estes acontecem dentro de nossa cidade. O site se 
+               para auxiliar a comunidade a reportar e ter acesso aos roubos, vias esburacadas e problemas de iluminação,
+               assim como, as localidades em que estes acontecem dentro de nossa cidade. O site se 
                trata de um projeto sem fins lucrativos que foi desenvolvido como parte 
-               da formação do eixo de tecnologia da univerdade.
+               da formação do eixo de tecnologia da universidade.
             </p>
     </div>
   </div>
@@ -40,7 +40,36 @@
       <a href="https://www.policiamilitar.sp.gov.br/">Polícia Militar: 190</a>
       &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp; <a href="https://www.mulhersegura.org/preciso-de-ajuda/ligue-180-central-de-atendimento-a-mulher"> Delegacia da Mulher: 180 </a>
       &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a href="https://portal.diadema.sp.gov.br/seguranca-cidada/">Portal diadema</a>
-      </div>
+      
+      <style>
+        body {
+            background-color: #ffffff; /* Fundo padrão */
+            color: #333333; /* Texto padrão */
+        }
+      
+        .alto-contraste {
+            background-color: #000000; /* Fundo escuro */
+            color: #ffffff; /* Texto claro */
+          button, button[type] {
+            background-color: #000000; /* Fundo escuro */
+            color: #ffffff; /* Texto claro */
+            font-weight: bold;
+          }
+          header{
+            color: #ffffff ;/* Texto claro */ 
+            }
+          }
+      </style>
+      
+      <button id="toggle-contrast">Alternar Alto Contraste</button>
+      
+      <script>
+        document.getElementById('toggle-contrast').addEventListener('click', function() {
+      document.body.classList.toggle('alto-contraste');
+        });
+      </script>
+  
+    </div>
   </footer>
 </body>
 </html>
