@@ -102,3 +102,16 @@ h2{
     .ref{
       justify-content: space-evenly;
     }
+    .toggle-contrast {
+      padding: 3px 8px;
+      background-color: #007BFF;
+      justify-content: right;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      }
+      .toggle-contrast:hover {
+      background-color: #0056b3;
+      }

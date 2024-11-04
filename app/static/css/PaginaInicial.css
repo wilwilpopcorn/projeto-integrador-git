@@ -13,7 +13,8 @@
   body {
     margin: 0;
   }
-  
+
+
   header {
     display: flex;
     justify-content: space-between;
@@ -146,3 +147,56 @@
     width: 100%;
     top:auto
   }
+.toggle-contrast {
+  padding: 3px 8px;
+  background-color: #007BFF;
+  justify-content: right;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  }
+  .toggle-contrast:hover {
+  background-color: #0056b3;
+  }
+
+/* Estilos do botão sanduíche */
+.hamburguer {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Estilos do menu */
+.menu {
+  display: none; /* Escondido inicialmente */
+  position: absolute;
+  top: 100%; /* Posiciona o menu logo abaixo do botão */
+  left: 0;
+  background-color: #92bdb7;
+  padding: 10px;
+  border-radius: 4px;
+  width: 20%; /* Define a largura do menu */
+  box-shadow: 0px 4px 8px rgba(151, 201, 144, 0.2);
+}
+
+/* Links do menu */
+.menu a {
+  display: block;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  ;
+}
+
+.menu a:hover {
+  background-color: #555;
+}
+
+/* Classe para mostrar o menu */
+.menu.show {
+  display: block;
+}

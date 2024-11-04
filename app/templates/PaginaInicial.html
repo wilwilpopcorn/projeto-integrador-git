@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reporta Diadema</title>
   <link rel="stylesheet" href="../static/css/PaginaInicial.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <script>
     function funcao1() {  /* Inserir condicional para a mensagem de alerta aparecer após clicar 
@@ -32,16 +33,20 @@
   
   <header>
     <div class="logo">
-      <img src="../static/logo.jpg"  alt="Logotipo">
+      <img src="../static/logo.png"  alt="Logotipo" title="Logotipo Reporta Diadema">
     </div>
     <div class="page-title"><h1>Reporta Diadema</h1>
     </div>
-    <button class="consulta">
-      <a href="consulta.html">Consulta</a>
-    </button>
-    <button class="quemSomos">
-      <a href="quemSomos.html">Quem somos</a>
-    </button>
+
+    <div class="menu-container">
+      <button class="hamburguer" onclick="toggleMenu()">☰</button>
+      <div class="menu" id="menu">
+        <a href="consulta.html">Consulta</a>
+        <a href="quemSomos.html">Quem Somos</a>
+        <a href="pagina3.html">Página 3</a>
+      </div>
+
+<script src="../static/js/PaginaInicial.js"></script>
 
   </header>
 
@@ -87,9 +92,36 @@
       </div>
       <textarea name="obs"
         placeholder="Descreva o ocorrido (informe pontos de referência e o que mais achar necessário)">{{obs}}</textarea>
-      <button type="submit">Enviar</button>
+      <button type="submit">Enviar </button>
     </form>
   </div>
-  <footer>Denuncie todo e qualquer tipo de crime as autoridades responsáveis!</footer>
+ 
+  <footer >Denuncie todo e qualquer tipo de crime as autoridades responsáveis!
+    <style>
+      body {
+          background-color: #ffffff; /* Fundo padrão */
+          color: #333333; /* Texto padrão */
+      }
+    
+      .alto-contraste {
+          background-color: #000000; /* Fundo escuro */
+          color: #ffffff; /* Texto claro */
+        button, button[type] {
+          background-color: #000000; /* Fundo escuro */
+          color: #ffffff; /* Texto claro */
+          font-weight: bold;
+        }
+        header{
+          color: #ffffff ;/* Texto claro */ 
+          }
+        }
+    </style>
+    
+    <button class="toggle-contrast" id="toggle-contrast">
+      <i class="fas fa-adjust"></i> 
+    </button>
+    <script src="../static/js/PaginaInicial.js"></script>
+  </footer>
+
 </body>
 </html>
